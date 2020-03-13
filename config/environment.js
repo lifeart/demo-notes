@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'octane-notes',
     environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'hash',
     'ember-local-storage': {
       includeEmberDataSupport: true
     },

@@ -11,7 +11,3 @@ Router.map(function() {
     this.route('note', { path: 'notes/:note_id'});
   });
 });
-
-Router.reopen({
-  location: 'hash'
-});
