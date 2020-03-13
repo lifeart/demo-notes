@@ -9,7 +9,7 @@ export default class NoteBarComponent extends Component {
         this.store.createRecord('note', {
             text: this.noteText,
             parent: this.args.tag
-        }).save();
+        }).save(result=>result.parent.save());
         this.noteText = '';
     }
 }

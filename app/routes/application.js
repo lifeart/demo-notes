@@ -9,7 +9,7 @@ export default class ApplicationRoute extends Route {
         this.intl.setLocale(loc);
     }
     model() {
-        return this.store.peekAll('tag');
+        return Promise.all([this.store.findAll('tag'),this.store.findAll('note')]).then(([tags])=>tags);
     }
     error() {
         this.replaceWith('application');
