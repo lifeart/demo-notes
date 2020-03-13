@@ -4,12 +4,15 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 export default class NoteBarComponent extends Component {
     @service store;
+    @service router;
     @tracked noteText = '';
     @action addNote() {
-        this.store.createRecord('note', {
+        const record = this.store.createRecord('note', {
             text: this.noteText,
             parent: this.args.tag
-        }).save(result=>result.parent.save());
+        });
+        record.save(result=>result.parent.save());
         this.noteText = '';
+        this.router.transitionTo('tag.note', record.parent, record);
     }
 }

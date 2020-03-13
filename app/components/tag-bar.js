@@ -4,11 +4,14 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 export default class TagBarComponent extends Component {
     @service store;
+    @service router;
     @tracked tagName = '';
     @action addTag() {
-        this.store.createRecord('tag', {
+        let record = this.store.createRecord('tag', {
             name: this.tagName
-        }).save();
+        });
+        record.save();
         this.tagName = '';
+        this.router.transitionTo('tag', record);
     }
 }
