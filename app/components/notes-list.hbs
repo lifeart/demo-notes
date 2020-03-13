@@ -3,7 +3,7 @@
   {{#each (sort-by "updatedAt:desc" this.results) as |note|}}
     <li>
       <LinkTo @route="tag.note" @models={{array @tag note}}>
-        {{note.text}}
+        {{text-highlight note.text query=this.searchString}}
       </LinkTo>
       <button
         type="button"
