@@ -1,0 +1,28 @@
+<Input @value={{this.searchString}} type="text" placeholder="search..." />
+<ul>
+  {{#each (sort-by "updatedAt:desc" this.results) as |note|}}
+    <li>
+      <LinkTo @route="tag.note" @models={{array @tag note}}>
+        {{note.text}}
+      </LinkTo>
+      <button
+        type="button"
+        class="button button-clear"
+        {{on "click" (fn this.removeNote note)}}
+      >
+        x
+      </button>
+    </li>
+  {{else}}
+    <blockquote>
+      <p>
+        <em>
+          {{t "no_notes_found"}}
+          "
+          {{@tag.name}}
+          "
+        </em>
+      </p>
+    </blockquote>
+  {{/each}}
+</ul>

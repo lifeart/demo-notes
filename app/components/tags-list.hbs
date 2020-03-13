@@ -1,0 +1,12 @@
+<ul>
+  {{#each @tags as |tag|}}
+    <li>
+      <LinkTo @route="tag" @model={{tag}}>
+        {{tag.name}}
+      </LinkTo>
+      <button type="button" class="button button-clear" {{on "click" (fn this.removeTag tag)}}>
+        x
+      </button>
+    </li>
+  {{/each}}
+</ul>

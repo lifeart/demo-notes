@@ -1,0 +1,22 @@
+{{#if @model.isDeleted}}
+  <blockquote>
+    <p><em>{{t 'empty_tag'}}</em></p>
+  </blockquote>
+{{else}}
+  <div class="column column-25">
+    <div class="row">
+      <div class="column">
+        <h1>
+          {{t 'notes'}}
+        </h1>
+        <NoteBar @tag={{@model}} />
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <NotesList @tag={{@model}} />
+      </div>
+    </div>
+  </div>
+  {{outlet}}
+{{/if}}
