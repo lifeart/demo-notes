@@ -1,4 +1,6 @@
+{{#if @tag.notes.length}}
 <Input @value={{this.searchString}} type="text" placeholder="search..." />
+{{/if}}
 <ul>
   {{#each (sort-by "updatedAt:desc" this.results) as |note|}}
     <li>

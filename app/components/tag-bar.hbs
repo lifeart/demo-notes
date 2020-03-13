@@ -1,2 +1,6 @@
-<Input @value={{this.tagName}} />
-<button {{on 'click' this.addTag}}>{{t 'add_tag'}}</button>
+<form {{on "submit" this.addTag}} {{autofocus}}>
+  <Input @value={{this.tagName}} minlength="1" required="true" />
+  <button type="submit">
+    {{t "add_tag"}}
+  </button>
+</form>

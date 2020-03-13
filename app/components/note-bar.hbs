@@ -1,2 +1,6 @@
-<Input @value={{this.noteText}} />
-<button {{on 'click' this.addNote}}>{{t 'add_note'}}</button>
+<form {{on "submit" this.addNote}} {{autofocus}}>
+  <Input @value={{this.noteText}} minlength="1" required="true" />
+  <button type="submit">
+    {{t "add_note"}}
+  </button>
+</form>

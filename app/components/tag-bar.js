@@ -6,7 +6,8 @@ export default class TagBarComponent extends Component {
     @service store;
     @service router;
     @tracked tagName = '';
-    @action addTag() {
+    @action addTag(e) {
+        e.preventDefault();
         let record = this.store.createRecord('tag', {
             name: this.tagName
         });

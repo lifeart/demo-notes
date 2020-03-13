@@ -6,7 +6,8 @@ export default class NoteBarComponent extends Component {
     @service store;
     @service router;
     @tracked noteText = '';
-    @action addNote() {
+    @action addNote(e) {
+        e.preventDefault();
         const record = this.store.createRecord('note', {
             text: this.noteText,
             parent: this.args.tag
