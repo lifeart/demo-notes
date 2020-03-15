@@ -56,7 +56,7 @@ module.exports = function(/* environment */) {
      * @type {Boolean}
      * @default "false"
      */
-    disablePolyfill: false,
+    disablePolyfill: true,
 
     /**
      * Prevents the translations from being bundled with the application code.

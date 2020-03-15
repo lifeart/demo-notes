@@ -4,6 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
+    treeShaking: {
+      enabled: true,
+    },  
     // Add options here
     prember: {
       urls: [
