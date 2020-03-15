@@ -8,7 +8,7 @@ module.exports = function(/* environment, appConfig */) {
     name: "octane-notes",
     short_name: "octane-notes",
     description: "",
-    start_url: "/",
+    start_url: "/demo-notes/",
     display: "standalone",
     background_color: "#fff",
     theme_color: "#fff",
